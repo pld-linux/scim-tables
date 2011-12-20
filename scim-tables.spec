@@ -7,7 +7,7 @@
 Summary:	SCIM Generic Table IMEngine
 Name:		scim-tables
 Version:	0.5.10
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/scim/%{name}-%{version}.tar.gz
