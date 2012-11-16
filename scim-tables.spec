@@ -6,12 +6,12 @@
 #
 Summary:	SCIM Generic Table IMEngine
 Name:		scim-tables
-Version:	0.5.10
-Release:	6
+Version:	0.5.12
+Release:	1
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/scim/%{name}-%{version}.tar.gz
-# Source0-md5:	b3c0393acad77a03f3f71eb5b5a5670e
+# Source0-md5:	0b5d25fee5bcbfe35159d1bb061c8911
 Source1:	CangJie5.png
 # http://www.chinesecj.com/newsoftware/index3.php?Type=1
 Source2:	CangJie5.txt.in
@@ -302,7 +302,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/scim/icons/Simplex.png
 %{_datadir}/scim/icons/Stroke5.png
 %{_datadir}/scim/icons/Wu.png
-%{_datadir}/scim/icons/ZhuYin.png
 %{_datadir}/scim/icons/Ziranma.png
 %{_datadir}/scim/tables/CNS11643.bin
 %{_datadir}/scim/tables/CangJie.bin
