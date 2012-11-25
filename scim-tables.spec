@@ -8,7 +8,7 @@ Summary:	SCIM Generic Table IMEngine
 Summary(pl.UTF-8):	Silnik IM Generic Table dla platformy SCIM
 Name:		scim-tables
 Version:	0.5.12
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/scim/%{name}-%{version}.tar.gz
