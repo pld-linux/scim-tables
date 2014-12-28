@@ -19,7 +19,7 @@ Source2:	CangJie5.txt.in
 Patch0:		%{name}-rhbz217639.patch
 Patch1:		%{name}-rhbz232860.patch
 URL:		http://sourceforge.net/projects/scim/
-BuildRequires:	gettext-devel >= 0.14
+BuildRequires:	gettext-tools >= 0.14
 BuildRequires:	gtk+2-devel
 BuildRequires:	intltool >= 0.33
 BuildRequires:	libstdc++-devel
