@@ -1,3 +1,4 @@
+# TODO: skim support (skim-devel >= 1.2.1)
 #
 # Conditional build:
 %bcond_without	indic_tables	# don't build Indic tables
@@ -7,22 +8,25 @@
 Summary:	SCIM Generic Table IMEngine
 Summary(pl.UTF-8):	Silnik IM Generic Table dla platformy SCIM
 Name:		scim-tables
-Version:	0.5.12
-Release:	2
+Version:	0.5.14.1
+Release:	1
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/scim/%{name}-%{version}.tar.gz
-# Source0-md5:	0b5d25fee5bcbfe35159d1bb061c8911
+# Source0-md5:	c2bb5f79c381cefb656ac8c8b3dc5b53
 Source1:	CangJie5.png
 # http://www.chinesecj.com/newsoftware/index3.php?Type=1
 Source2:	CangJie5.txt.in
 Patch0:		%{name}-rhbz217639.patch
 Patch1:		%{name}-rhbz232860.patch
 URL:		http://sourceforge.net/projects/scim/
+BuildRequires:	autoconf >= 2.50
+BuildRequires:	automake
 BuildRequires:	gettext-tools >= 0.14
 BuildRequires:	gtk+2-devel
 BuildRequires:	intltool >= 0.33
 BuildRequires:	libstdc++-devel
+BuildRequires:	libtool >= 2:1.5
 BuildRequires:	pkgconfig
 BuildRequires:	scim-devel >= 1.4.9
 Requires:	scim >= 1.4.9
@@ -355,6 +359,12 @@ Ten pakiet zawiera różne pliki dla scim-tables.
 %{__cp} -f %{SOURCE2} tables/zh/
 
 %build
+%{__intltoolize}
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure \
 	--disable-static
 
@@ -453,6 +463,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files hebrew
 %defattr(644,root,root,755)
+%{_datadir}/scim/icons/HebrewComputer.png
+%{_datadir}/scim/tables/HebrewComputer.bin
 %{_datadir}/scim/tables/classicalhebrew.bin
 
 %files nepali
@@ -463,8 +475,10 @@ rm -rf $RPM_BUILD_ROOT
 %files russian
 %defattr(644,root,root,755)
 %{_datadir}/scim/icons/Translit.png
+%{_datadir}/scim/icons/RussianComputer.png
 %{_datadir}/scim/icons/RussianTraditional.png
 %{_datadir}/scim/icons/Yawerty.png
+%{_datadir}/scim/tables/RussianComputer.bin
 %{_datadir}/scim/tables/RussianTraditional.bin
 %{_datadir}/scim/tables/Yawerty.bin
 %{_datadir}/scim/tables/Translit.bin
